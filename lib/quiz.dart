@@ -53,7 +53,9 @@ class _QuizState extends State<Quiz> {
               ? StartScreen(switchScreen)
               : activeScreen == 'questions-screen'
                   ? QuestionsScreen(onSlectAnswer: chooseAnswer)
-                  : const ResultScreen(),
+                  : ResultScreen(
+                      chosenAnswers: selectedAnswers,
+                    ),
         ),
       ),
     );
