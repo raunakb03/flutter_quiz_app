@@ -24,6 +24,13 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void setHomeScreen() {
+    setState(() {
+      selectedAnswers = [];
+      activeScreen = 'start-screen';
+    });
+  }
+
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
     if (selectedAnswers.length == questions.length) {
@@ -53,6 +60,7 @@ class _QuizState extends State<Quiz> {
               : activeScreen == 'questions-screen'
                   ? QuestionsScreen(onSlectAnswer: chooseAnswer)
                   : ResultScreen(
+                      setHomeScreen: setHomeScreen,
                       chosenAnswers: selectedAnswers,
                     ),
         ),
