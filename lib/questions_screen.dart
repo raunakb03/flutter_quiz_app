@@ -20,7 +20,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   var currnetQuestionIndex = 0;
 
   void answerQuestion(String selectedAnswer) {
-    widget.onSlectAnswer('...');
+    widget.onSlectAnswer(selectedAnswer);
     setState(() {
       currnetQuestionIndex++;
     });
